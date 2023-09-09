@@ -12,11 +12,11 @@ class DataValidation:
         try:
             validation_status = None
             data = pd.read_csv(self.config.unzip_data_dir)
-            all_columns = list(data.columns)
+            all_cols = list(data.columns)
             all_schema = self.config.all_schema.keys()
             # os.makedirs()
 
-            for col in all_columns:
+            for col in all_cols:
                 if col not in all_schema:
                     validation_status = False
                     with open(self.config.STATUS_FILE,'w') as f:
